@@ -1,0 +1,56 @@
+
+
+<div class="card container"> 
+    <div class="login">
+
+        <ul class="navbar-nav mr-auto ">
+            <li   routerLinkActive="active" >
+                <input class="btn btn-primary " type="button" [routerLink]="['/login']" routerLinkActive="router-link-active"  value="Ingresar">
+                <input class="btn btn-primary" type="button" [routerLink]="['/register']" routerLinkActive="router-link-active"  value="Registrarse">         
+           </li>   
+        </ul>
+        
+    </div>
+
+    
+    <div class="  formulario">
+        <form [formGroup]="form" (ngSubmit)='onLogin()'>
+            
+            Usuario: <input 
+            [class.is-invalid]="form.get('username').touched && form.get('username').invalid"
+            [class.is-valid]="form.get('username').touched && form.get('username').valid"
+            type="text" 
+            class="form-control" 
+            formControlName="username">
+            
+            Contraseña <input 
+            [class.is-invalid]="form.get('userpassword').touched && form.get('userpassword').invalid"
+            type="password" 
+            class="form-control" 
+            formControlName="userpassword">
+            <br/>
+
+            <div class="alert alert-danger" role="alert" *ngIf="alert">
+                Por favor verifica los datos
+            </div>
+
+
+            <button class="btn btn-primary" type="submit">Enviar</button>
+
+            <br/>
+            
+            <ul class="navbar-nav mr-auto">
+                <li  routerLinkActive="active" >
+
+                 <p class="font-italic " id="RecuperarCon" type="submit"  [routerLink]="['/home']" >Olvido su Contraseña</p> 
+                    
+                </li>   
+            </ul>
+
+            
+
+        </form>
+        
+    </div>
+
+    

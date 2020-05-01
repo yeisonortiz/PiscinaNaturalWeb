@@ -1,0 +1,23 @@
+<div class="card setEmail"  *ngIf="user$ | async as user; else loading">
+    <div class="card-body">
+        <h3 class="card-title">Gracias por Registrarse!</h3>
+        <div class="form-group">
+            <p class="text-center">
+                Le enviamos un correo de verificación a <strong>{{user?.email}}</strong>
+            </p>
+
+            <p class="text-center">
+                Por favor verifique el correo electronico y de click al link asignado
+            </p>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" (click)="onSendEmail()"> Reenviar correo de Verificación</button>
+        </div>
+    </div>
+
+</div>
+
+<ng-template #loading>
+    loagin...
+</ng-template>

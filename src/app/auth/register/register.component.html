@@ -1,0 +1,63 @@
+
+
+<div class="card container"> 
+    <div class="login">
+
+        <ul class="navbar-nav mr-auto ">
+            <li   routerLinkActive="active" >
+                <input class="btn btn-primary " type="button" [routerLink]="['/login']" routerLinkActive="router-link-active"  value="Ingresar">
+                <input class="btn btn-primary" type="button" [routerLink]="['/register']" routerLinkActive="router-link-active"  value="Registrarse">         
+           </li>   
+        </ul>
+        
+    </div>
+
+    
+    <div class="  formulario">
+        <form [formGroup]="form" (ngSubmit)="onRegister()" >
+
+            Nombre: <input 
+            [class.is-invalid]="form.get('name').touched && form.get('name').invalid"
+            [class.is-valid]="form.get('name').touched && form.get('name').valid"
+            type="text" 
+            class="form-control" 
+            formControlName="name">
+
+            Apellido: <input 
+            [class.is-invalid]="form.get('lastname').touched && form.get('lastname').invalid"
+            [class.is-valid]="form.get('lastname').touched && form.get('lastname').valid"
+            type="text" 
+            class="form-control" 
+            formControlName="lastname">
+
+            N° Celular: <input 
+            [class.is-invalid]="form.get('cellphone').touched && form.get('cellphone').invalid"
+            [class.is-valid]="form.get('cellphone').touched && form.get('cellphone').valid"
+            type="text" 
+            class="form-control" 
+            formControlName="cellphone">
+            
+            Usuario: <input 
+            [class.is-invalid]="form.get('username').touched && form.get('username').invalid"
+            [class.is-valid]="form.get('username').touched && form.get('username').valid"
+            type="text" 
+            class="form-control" 
+            formControlName="username">
+            
+            Contraseña <input 
+            [class.is-invalid]="form.get('userpassword').touched && form.get('userpassword').invalid"
+            [class.is-valid]="form.get('userpassword').touched && form.get('userpassword').valid"
+            type="password" 
+            class="form-control" 
+            formControlName="userpassword"><br/>
+            
+            <button class="btn btn-primary" type="submit">Registrarse</button>
+
+            <br/>
+            
+    
+            
+
+        </form>
+        
+    </div>

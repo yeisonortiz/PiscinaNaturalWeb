@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "PiscinaNaturalWeb": {
@@ -28,9 +28,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.styl"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.styl",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -121,8 +127,13 @@
               "devServerTarget": "PiscinaNaturalWeb:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "PiscinaNaturalWeb"
 }

@@ -1,0 +1,34 @@
+{
+  "hosting": [
+    {
+      "target": "PiscinaNaturalWeb",
+      "public": "dist/PiscinaNaturalWeb",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "PiscinaNaturalWeb",
+      "public": "dist/PiscinaNaturalWeb",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "appclick-baddb": {
+      "hosting": {
+        "PiscinaNaturalWeb": [
+          "appclick-baddb"
+        ]
+      }
+    }
+  }
+}
