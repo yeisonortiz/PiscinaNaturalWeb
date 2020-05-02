@@ -21,7 +21,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { RegisterComponent } from './auth/register/register.component';
 import { OrdersComponent } from './orders/orders.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -46,8 +45,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
    AppRoutingModule,
    FormsModule,
    ReactiveFormsModule,
-   NgbModule,
-   FontAwesomeModule
+   NgbModule
   ],
   providers: [
     AppComponent 
