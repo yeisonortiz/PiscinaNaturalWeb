@@ -4,6 +4,7 @@ import { AngularFireAuth} from '@angular/fire/auth'
 import { User} from 'firebase'
 import { first} from 'rxjs/operators';
 import { promise } from 'protractor';
+import  { AngularFirestore } from '@angular/fire/firestore'
 
 @Injectable()
 
@@ -11,9 +12,11 @@ import { promise } from 'protractor';
 export class AuthService {
 
   public user : User;
+  public firestore : AngularFirestore;
 
 
   constructor( public afAuth: AngularFireAuth ) { }
+
 
   async sendVerificationEmail(): Promise<void>{
     return (await this.afAuth.currentUser).sendEmailVerification();
@@ -38,7 +41,7 @@ export class AuthService {
   }
 
   async register(email:string, password:string  )
-  {
+  { 
     try{
     const result = await this.afAuth.createUserWithEmailAndPassword(
       email,
@@ -55,6 +58,19 @@ export class AuthService {
 
   }
 
+  async dates (name: string, lastname:string, cellphone:string ){
+
+    try{
+
+    // const result = await this.firestore.collection('Usuarios').doc(name).get({name,lastname,cellphone});
+
+    }
+    catch(error){
+      console.log(error)
+    }
+
+  }
+ 
 
 
   async logout(){

@@ -31,10 +31,13 @@ export class RegisterComponent implements OnInit {
   async onRegister(){
 
     const {username, userpassword} = this.form.value;
+    const {name, lastname, cellphone} = this.form.value;
+
 
     try{
 
     const user = await this.authSvc.register(username, userpassword);
+    const dates = await this.authSvc.dates(name,lastname,cellphone);  
 
     if(user)
     {
