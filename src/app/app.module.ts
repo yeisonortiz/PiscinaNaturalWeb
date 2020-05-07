@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { SetEmailComponent } from './auth/set-email/set-email.component';
+import { DatePipe } from "@angular/common";
 
 
 /*firebase*/
@@ -48,8 +49,10 @@ import { OrdersComponent } from './orders/orders.component';
    NgbModule
   ],
   providers: [
-    AppComponent 
-  ],
+    AppComponent,
+    DatePipe
+
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

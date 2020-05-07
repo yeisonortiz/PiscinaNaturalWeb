@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   constructor(private authSvc:AuthService, private router:Router) {
-
+ 
   }
 
 
@@ -29,21 +29,18 @@ export class RegisterComponent implements OnInit {
   }
 
   async onRegister(){
-
-    const {username, userpassword} = this.form.value;
-    const {name, lastname, cellphone} = this.form.value;
-
-
+    
+    const {username, userpassword,name, lastname, cellphone} = this.form.value;
+  
     try{
 
-    const user = await this.authSvc.register(username, userpassword);
-    const dates = await this.authSvc.dates(name,lastname,cellphone);  
-
+     const user = await this.authSvc.register(username, userpassword,name,lastname,cellphone);
+      
     if(user)
     {
-        this.router.navigate(['/verificacion-email']);
-
+      this.router.navigate(['/verificacion-email']);
     }
+     
 
     }
     catch(error){

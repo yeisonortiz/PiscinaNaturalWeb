@@ -1,21 +1,15 @@
 import { Injectable } from '@angular/core';
-import {auth} from 'firebase/app'
-import { AngularFireAuth} from '@angular/fire/auth'
-import { User} from 'firebase'
+import { AngularFireAuth} from '@angular/fire/auth';
 import { first} from 'rxjs/operators';
-import { promise } from 'protractor';
-import  { AngularFirestore } from '@angular/fire/firestore'
+import  { AngularFirestore } from '@angular/fire/firestore';
+import { DatePipe } from "@angular/common";
 
 @Injectable()
 
 
 export class AuthService {
 
-  public user : User;
-  public firestore : AngularFirestore;
-
-
-  constructor( public afAuth: AngularFireAuth ) { }
+  constructor( public afAuth: AngularFireAuth, private firestore: AngularFirestore, private datepipe: DatePipe   ) { }
 
 
   async sendVerificationEmail(): Promise<void>{
@@ -40,13 +34,18 @@ export class AuthService {
     
   }
 
-  async register(email:string, password:string  )
+
+
+  async register(email:string, password:string, name:string , lastname:string ,cellphone:string  )
   { 
     try{
     const result = await this.afAuth.createUserWithEmailAndPassword(
       email,
       password
     );
+
+      
+    this.dates(name,lastname,cellphone,result.user.uid);
     this.sendVerificationEmail();
 
 
@@ -58,19 +57,38 @@ export class AuthService {
 
   }
 
-  async dates (name: string, lastname:string, cellphone:string ){
 
-    try{
+  idDocument(name:string, lastname:string){
 
-    // const result = await this.firestore.collection('Usuarios').doc(name).get({name,lastname,cellphone});
-
-    }
-    catch(error){
-      console.log(error)
-    }
+    var date = Date();
+    const id = "Cli-";
+    const n= name.charAt(0).toUpperCase();
+    const ln= lastname.charAt(0).toUpperCase();
+    var Dat = this.datepipe.transform(date,'yyyy.MM.dd');
+    const idE =id + n + ln +"-" + Dat
+ 
+    return idE
 
   }
- 
+
+   dates(nombre:string, apellido:string, ncelular:string, uid:string ) {
+    
+   const id = this.idDocument(nombre,apellido);
+
+  
+    
+    return new Promise<any>((resolve, reject) =>{
+        this.firestore
+            .collection("Usuarios")
+            .doc(id)
+            .set({
+              nombre,
+              apellido,
+              ncelular, 
+              uid          
+            });
+    });
+}
 
 
   async logout(){
@@ -85,6 +103,8 @@ export class AuthService {
     }
   
   }
+
+
 
   getCurrenUser(){
 
