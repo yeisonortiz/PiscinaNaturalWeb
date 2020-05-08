@@ -22,6 +22,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { RegisterComponent } from './auth/register/register.component';
 import { OrdersComponent } from './orders/orders.component';
+import { OrderComponent } from './orders/order/order.component';
 
 
 
@@ -34,8 +35,9 @@ import { OrdersComponent } from './orders/orders.component';
     AboutComponent,
     SetEmailComponent,
     RegisterComponent,
-    OrdersComponent
-      ],
+    OrdersComponent,
+    OrderComponent
+      ], 
   
   imports: [
    BrowserModule,

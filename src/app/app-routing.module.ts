@@ -7,8 +7,11 @@ import { HomeComponent } from "./home/home.component";
 import {AboutComponent } from "./about/about.component"; 
 import { RegisterComponent } from "./auth/register/register.component";
 import { OrdersComponent } from "./orders/orders.component";
+import { OrderComponent } from "./orders/order/order.component";
+
 
 const routes: Routes = [
+{path:'order', component: OrderComponent}, 
 {path:'orders', component: OrdersComponent }, 
 {path:"verificacion-email", component: SetEmailComponent},
 {path:'about', component: AboutComponent },
