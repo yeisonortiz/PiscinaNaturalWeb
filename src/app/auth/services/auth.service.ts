@@ -108,7 +108,7 @@ export class AuthService {
 
   getCurrenUser(){
 
-    return this.afAuth.authState.pipe(first()).toPromise();
+    return this.afAuth.authState;
  
   }
   
