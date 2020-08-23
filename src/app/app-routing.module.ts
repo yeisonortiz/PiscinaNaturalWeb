@@ -8,9 +8,11 @@ import {AboutComponent } from "./about/about.component";
 import { RegisterComponent } from "./auth/register/register.component";
 import { OrdersComponent } from "./orders/orders.component";
 import { OrderComponent } from "./orders/order/order.component";
+import { GlampingComponent} from "./glamping/glamping.component"
 
 
 const routes: Routes = [
+{path: 'glamping', component: GlampingComponent}, 
 {path:'order', component: OrderComponent}, 
 {path:'orders', component: OrdersComponent }, 
 {path:"verificacion-email", component: SetEmailComponent},

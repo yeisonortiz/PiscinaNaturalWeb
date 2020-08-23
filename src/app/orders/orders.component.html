@@ -137,8 +137,18 @@
 
   
 
-  <p>Para domicilios al 314-2266519</p>
-  <button type="button" class="btn btn-success" [routerLink]="['/order']">Hacer pedido</button>
+  <p>Para domicilios al 314 226 6519</p>
+  
+  <!-- <button type="button" class="btn btn-success" [routerLink]="['/order']" >Hacer pedido</button> -->
+
+  <ul class="navbar-nav mr-auto" *ngIf="user$ | async as user">
+
+    <li>
+      <button id="ingresar" type="button" class="btn btn-outline-primary" [routerLink]="['/order']"  *ngIf="user"  >Hacer Pedido</button>
+    </li>  
+
+  </ul>
+
 
   <div class="card-deck text-info " >
 
@@ -176,6 +186,9 @@
       </div>
     </div>
   </div>
+
+
+ 
 
 
 

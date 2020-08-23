@@ -23,6 +23,7 @@ import { environment } from 'src/environments/environment';
 import { RegisterComponent } from './auth/register/register.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderComponent } from './orders/order/order.component';
+import { GlampingComponent } from './glamping/glamping.component';
 
 
 
@@ -36,7 +37,8 @@ import { OrderComponent } from './orders/order/order.component';
     SetEmailComponent,
     RegisterComponent,
     OrdersComponent,
-    OrderComponent
+    OrderComponent,
+    GlampingComponent
       ], 
   
   imports: [
