@@ -12,7 +12,8 @@ export const environment = {
     projectId: "appclick-baddb",
     storageBucket: "appclick-baddb.appspot.com",
     messagingSenderId: "169009590104",
-    appId: "1:169009590104:web:7993c2f1012ab4f1933f2d"
+    appId: "1:169009590104:web:7993c2f1012ab4f1933f2d",
+    measurementId: "G-K8T9CGTLER"
   } 
 };
 
